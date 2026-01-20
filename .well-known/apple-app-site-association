@@ -1,0 +1,24 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appIDs": ["XXXXXXXXXX.com.zaza1235688.time2quiz"],
+        "components": [
+          {
+            "/": "/join/*",
+            "comment": "Liens de parrainage avec code"
+          },
+          {
+            "/": "/join",
+            "comment": "Page parrainage principale"
+          }
+        ]
+      }
+    ]
+  },
+  "webcredentials": {
+    "apps": ["XXXXXXXXXX.com.zaza1235688.time2quiz"]
+  }
+}
+

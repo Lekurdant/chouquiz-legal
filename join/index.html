@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejoins ChouQuiz ! 🎯</title>
+    <meta name="description" content="Ton ami t'invite à rejoindre ChouQuiz !">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Outfit', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .container { text-align: center; max-width: 400px; }
+        .logo { font-size: 80px; margin-bottom: 20px; animation: bounce 2s ease-in-out infinite; }
+        @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+        h1 { color: white; font-size: 32px; font-weight: 800; margin-bottom: 15px; }
+        p { color: rgba(255,255,255,0.8); font-size: 18px; margin-bottom: 30px; line-height: 1.6; }
+        .loading { color: rgba(255,255,255,0.7); font-size: 16px; margin-bottom: 30px; }
+        .spinner {
+            display: inline-block; width: 20px; height: 20px;
+            border: 3px solid rgba(255,255,255,0.3); border-radius: 50%;
+            border-top-color: #4ECDC4; animation: spin 1s linear infinite;
+            margin-right: 10px; vertical-align: middle;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .store-buttons { display: flex; flex-direction: column; gap: 15px; margin-top: 30px; }
+        .store-btn {
+            display: flex; align-items: center; justify-content: center; gap: 12px;
+            padding: 16px 24px; background: white; color: #333; text-decoration: none;
+            border-radius: 14px; font-weight: 600; font-size: 16px;
+            transition: transform 0.2s; box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        .store-btn:hover { transform: translateY(-2px); }
+        .store-btn.apple { background: #000; color: white; }
+        .referral-box {
+            margin-top: 30px; padding: 20px; background: rgba(255,255,255,0.1);
+            border-radius: 16px; display: none;
+        }
+        .referral-label { color: rgba(255,255,255,0.7); font-size: 14px; margin-bottom: 5px; }
+        .referral-code { font-size: 24px; font-weight: 800; color: #FFD700; letter-spacing: 2px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">🎯</div>
+        <h1>Rejoins ChouQuiz !</h1>
+        <p>Ton ami t'invite au quiz quotidien à 21h30.<br>5 questions, 10 secondes chacune !</p>
+        <div class="loading"><span class="spinner"></span>Ouverture de l'app...</div>
+        <div id="referral-box" class="referral-box">
+            <div class="referral-label">Code de parrainage</div>
+            <div id="referral-code" class="referral-code"></div>
+        </div>
+        <div class="store-buttons">
+            <a href="https://apps.apple.com/app/chouquiz/idXXXXXXXXX" class="store-btn apple">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+                Télécharger sur App Store
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.zaza1235688.time2quiz" class="store-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="#EA4335" d="M3.61 1.81L14.25 12 3.61 22.19c-.34-.44-.54-.97-.54-1.56V3.37c0-.59.2-1.12.54-1.56z"/><path fill="#FBBC05" d="M14.25 12L3.61 22.19c.21-.27.48-.51.82-.68l11.66-6.73L14.25 12z"/><path fill="#4285F4" d="M21.4 10.25l-5.31 3.07-1.84-1.32 1.84-1.32 5.31 3.07c.65.38.65 1.32 0 1.7l-5.31 3.07L14.25 17l-1.84 1.32-11.59 6.69c-.34.17-.61.41-.82.68V1.81c.21.27.48.51.82.68l11.59 6.69L14.25 7l1.84-1.32 5.31 3.07c.65.38.65 1.32 0 1.7z"/><path fill="#34A853" d="M14.25 12l1.84 1.32-11.66 6.73c-.34.17-.61.41-.82.68L14.25 12z"/></svg>
+                Disponible sur Google Play
+            </a>
+        </div>
+    </div>
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const ref = params.get('ref');
+        
+        if (ref) {
+            document.getElementById('referral-box').style.display = 'block';
+            document.getElementById('referral-code').textContent = ref;
+        }
+        
+        // Essayer d'ouvrir l'app
+        const deepLink = ref ? `time2quiz://join?ref=${ref}` : 'time2quiz://';
+        window.location.href = deepLink;
+        
+        // Fallback après 2.5s
+        setTimeout(() => {
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            if (isIOS) {
+                window.location.href = 'https://apps.apple.com/app/chouquiz/idXXXXXXXXX';
+            } else {
+                window.location.href = 'https://play.google.com/store/apps/details?id=com.zaza1235688.time2quiz';
+            }
+        }, 2500);
+    </script>
+</body>
+</html>
+
