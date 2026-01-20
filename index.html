@@ -877,6 +877,20 @@
             line-height: 1.6;
         }
 
+        /* Centrer les deux dernières cartes */
+        @media (min-width: 900px) {
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            /* Centrer les deux dernières cartes côte à côte au centre */
+            .feature-card:nth-child(5) {
+                grid-column: 2;
+            }
+            .feature-card:nth-child(6) {
+                grid-column: 3;
+            }
+        }
+
         /* ===== APP PREVIEW ===== */
         .app-preview {
             display: flex;
