@@ -33,6 +33,7 @@
 
         html {
             scroll-behavior: smooth;
+            overflow-x: clip;
         }
 
         body {
@@ -986,6 +987,7 @@
             text-align: center;
             padding: 120px 40px;
             position: relative;
+            overflow: hidden;
         }
 
         .final-cta::before {
@@ -1104,6 +1106,10 @@
 
             .hero {
                 padding: 100px 20px 60px;
+            }
+
+            .hero-title .highlight {
+                white-space: normal;
             }
 
             .countdown-display {
